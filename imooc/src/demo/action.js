@@ -14,3 +14,7 @@ export function login() {
 export function logout() {
   return {type: Type.LOGNOUT}
 }
+
+export function userData(data) {
+  return {type: Type.USER_DATA, payload: data}
+}

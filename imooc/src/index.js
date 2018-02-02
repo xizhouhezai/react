@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
 import { BrowserRouter, Switch, Redirect, Route } from 'react-router-dom'
 import reducers from './demo/reducer'
 import registerServiceWorker from './registerServiceWorker';
 import App from './App';
 import Auth from './auth';
 
-const store = createStore(reducers)
+const store = createStore(reducers, applyMiddleware(thunk))
 const notfound = () => {
   return (
     <h1>NOT FOUND</h1>
