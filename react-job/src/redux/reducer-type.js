@@ -3,3 +3,7 @@ export const ERROR_MSG = 'ERROR_MSG'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOAD_DATA = 'LOAD_DATA'
 export const AUTH_SUCCESS = 'AUTH_SUCCESS'
+
+// chatuser
+
+export const USER_LIST = 'USER_LIST'

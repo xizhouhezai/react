@@ -8,3 +8,21 @@
 	padding-left:10px;
 	padding-top:10px;
 }
+
+.am-tab-bar{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+.fixd-header.am-navbar{
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+.iconfon {
+	font-size: 20px;
+}
+.icon-active {
+	color: rgb(16, 142, 233);
+}

@@ -73,9 +73,10 @@ router.post('/update', (req, res) => {
   })
 })
 router.get('/list', (req, res) => {
+  const { type } = req.query
   // userModel.remove({}, function(e,d){})
-  userModel.find({}, (err, doc) => {
-    res.json(doc)
+  userModel.find({ type }, _filter, (err, doc) => {
+    res.json({code: 0, data: doc})
   })
 })
 router.get('/info', (req, res) => {

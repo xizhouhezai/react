@@ -14,6 +14,7 @@ import Dashboard from './component/dashboard/dashboard'
 import reducers from './reducer'
 import './config'
 import './index.css'
+import './common/css/iconfont.css'
 
 const store = createStore(reducers, compose(
 	applyMiddleware(thunk),
