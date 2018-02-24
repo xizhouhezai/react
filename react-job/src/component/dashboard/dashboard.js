@@ -6,12 +6,10 @@ import { connect } from 'react-redux'
 import NavLink from '../nav-link/nav-link'
 import Boss from '../../container/boss/boss'
 import Genius from '../../container/genius/genius'
+import Me from '../../container/me/me'
 
 function Msg() {
   return <h1>Msg</h1>
-}
-function User() {
-  return <h1>User</h1>
 }
 
 @connect(
@@ -61,7 +59,7 @@ class Dashboard extends Component {
             <Route path="/boss" component={ Boss }/>
             <Route path="/genius" component={ Genius }/>
             <Route path="/msg" component={ Msg }/>
-            <Route path="/me" component={ User }/>
+            <Route path="/me" component={ Me }/>
           </Switch>
         </div>
         <NavLink navlist={navlist}></NavLink>

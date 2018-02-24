@@ -18,6 +18,8 @@ export function user(state = initState, action) {
 			return {...state, redirectTo: getRedirectPath(action.payload), ...action.payload}
 		case types.LOAD_DATA:
 			return {...state, ...action.payload}
+		case types.LOGOUT:
+			return {...initState, redirectTo: '/login'}
 		default:
 			return state
 	}
@@ -40,7 +42,6 @@ function authSuccess(data) {
 
 // 更新
 export function update(data) {
-	console.log(data)
 	if (!data.avatar) {
 		return errorMsg('请选择用户头像')
 	}
@@ -101,5 +102,13 @@ export function register({user, pwd, repeatpwd, type}) {
 export function loadData(data) {
 	return dispatch => {
 		dispatch({type: types.LOAD_DATA, payload: data})
+	}
+}
+
+
+// 登录退出
+export function logoutSubmit() {
+	return dispatch => {
+		dispatch({type: types.LOGOUT})
 	}
 }

@@ -34,7 +34,7 @@ class Login extends React.Component{
 		return (
 			<div>
 				<Logo></Logo>
-				{this.props.redirectTo ? <Redirect to={this.props.redirectTo} /> : null}
+				{(this.props.redirectTo && this.props.redirectTo !== '/login') ? <Redirect to={this.props.redirectTo} /> : null}
 				<WingBlank>
 					<List>
 						<p className="error-msg">{this.props.msg ? this.props.msg : ''}</p>
@@ -44,6 +44,7 @@ class Login extends React.Component{
 						<WhiteSpace />
 						<InputItem
 							onChange={v=>this.handleChange('pwd',v)}
+							type="password"
 						>密码</InputItem>
 					</List>
 					<WhiteSpace />
