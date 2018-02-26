@@ -7,7 +7,6 @@ const userModel = require('../model/user')
 const _filter = {pwd: 0, __v: 0}
 
 router.post('/register', (req, res) => {
-  console.log(req.body)
   const {user, pwd, type} = req.body
   userModel.findOne({user: user}, (err, doc) => {
     if (doc) {
@@ -33,10 +32,8 @@ router.post('/register', (req, res) => {
   })
 })
 router.post('/login', (req, res) => {
-  console.log(req.body)
   const {user, pwd} = req.body
   userModel.findOne({user: user}, (err, doc) => {
-    console.log(doc)
     if (!doc) {
       return res.json({code: 1, msg: '该用户不存在，请注册'})
     }
@@ -80,7 +77,6 @@ router.get('/list', (req, res) => {
   })
 })
 router.get('/info', (req, res) => {
-  console.log(req.cookies)
   const { userid } = req.cookies
   if (!userid) {
     res.json({
@@ -88,7 +84,6 @@ router.get('/info', (req, res) => {
     })
   }
   userModel.findOne({_id: userid}, _filter, (err, doc) => {
-    console.log(doc)
     if (err) {
       return res.json({code: 1, msg: '服务器出错了'})
     }
@@ -109,7 +104,6 @@ router.get('/avatar', (req, res) => {
     }
   }
   files.forEach((val) => {
-    console.log(val)
     result.push(new Img({
       imgName: val.split('.')[0],
       imgPath: val

@@ -27,3 +27,9 @@
 .icon-active {
 	color: rgb(16, 142, 233);
 }
+
+.stick-footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}

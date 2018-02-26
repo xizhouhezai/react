@@ -8,3 +8,7 @@ export const LOGOUT = 'LOGOUT'
 // chatuser
 
 export const USER_LIST = 'USER_LIST'
+
+// chat
+
+export const GET_MSG_LIST = 'GET_MSG_LIST'
