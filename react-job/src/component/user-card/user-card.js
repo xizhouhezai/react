@@ -16,7 +16,7 @@ class UserCard extends Component {
             return v.avatar ? (
               <div key={v._id}>
                 <WhiteSpace />
-                <Card onClick={() => {this.props.history.push(`/chat/${v.user}`)}}>
+                <Card onClick={() => {this.props.history.push(`/chat/${v._id}`)}}>
                   <Card.Header
                     title={v.user}
                     thumb={require(`../../common/images/${v.avatar}.png`)}

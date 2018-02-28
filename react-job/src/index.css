@@ -19,10 +19,11 @@
 	position: fixed;
 	top: 0;
 	width: 100%;
+	z-index: 999;
 }
 
-.iconfon {
-	font-size: 20px;
+.iconfont {
+	font-size: 20px !important;
 }
 .icon-active {
 	color: rgb(16, 142, 233);

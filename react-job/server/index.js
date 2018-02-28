@@ -3,6 +3,7 @@ const app = new express()
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const server = require('http').Server(app)
+const chatModel = require('./model/chat')
 
 const io = require('socket.io')(server)
 
@@ -13,7 +14,13 @@ io.on('connection', (socket) => {
   console.log('链接成功!!!!')
   socket.on('sendMsg', (data) => {
     console.log(data)
-    io.emit('rescMsg', data)
+    const { from, to, msg } = data
+    const chatid = [from, to].sort().join('_')
+    chatModel.create({chatid, from, to, content: msg}, (err, doc) => {
+      if (!err) {
+        io.emit('rescMsg', Object.assign({}, doc._doc))
+      }
+    })
   })
 })
 

@@ -1,0 +1,70 @@
+.chat .chat_right {
+  overflow: hidden;
+  margin-top: 10px;
+}
+.chat .chat_left {
+  overflow: hidden;
+  margin-top: 10px;
+}
+.chat .chat_right .demo {
+  float: right;
+}
+.chat .chat_left .demo {
+  float: left;
+}
+.demo {
+  margin-bottom:20px;
+  padding-left:25px;
+  position:relative;
+}
+
+.triangle {
+  position:absolute;
+  top:25%;
+  left: 17px;
+  display:block;
+  width:0;
+  height:0;
+  overflow:hidden;
+  line-height:0;
+  font-size:0;
+  border-bottom:8px solid #FFF;
+  border-top:8px solid #FFF;
+  border-left:none;
+  border-right:8px solid #3079ED;
+}
+
+.article, .chat-fl {
+  float: left;
+}
+.demo .article {
+  max-width: 300px;
+  color:#FFF;
+  display:inline-block;
+  display:inline;
+  zoom:1;
+  padding:5px 10px;
+  border:1px solid #3079ED;
+  background:#eee;
+  border-radius:5px;
+  background-color: #4D90FE;
+  background-image:-webkit-gradient(linear,left top,left bottom,from(#4D90FE),to(#4787ED));
+  background-image:-webkit-linear-gradient(to top,#4D90FE,#4787ED);
+  background-image:-moz-linear-gradient(center top , #4D90FE, #4787ED);
+  background-image:linear-gradient(to top,#4D90FE,#4787ED);
+}
+
+.fr { padding-left:0px; padding-right:25px; }
+
+.fr .triangle {
+  left:auto;
+  right:18px;
+  border-bottom:8px solid #FFF;
+  border-top:8px solid #FFF;
+  border-right:none;
+  border-left:8px solid #3079ED;
+}
+
+.fr .article, .chat-fr {
+  float:right;
+}

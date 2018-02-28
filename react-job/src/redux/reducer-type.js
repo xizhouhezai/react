@@ -12,3 +12,5 @@ export const USER_LIST = 'USER_LIST'
 // chat
 
 export const GET_MSG_LIST = 'GET_MSG_LIST'
+export const READ_MSG = 'READ_MSG'
+export const RECV_MSG = 'RECV_MSG'

@@ -8,14 +8,22 @@ import Boss from '../../container/boss/boss'
 import Genius from '../../container/genius/genius'
 import Me from '../../container/me/me'
 
+import { getMsgList, getRecvMsg } from '../../redux/chat.redux'
+
 function Msg() {
   return <h1>Msg</h1>
 }
 
 @connect(
-  state=>state
+  state=>state,
+  { getMsgList, getRecvMsg}
 )
 class Dashboard extends Component {
+  componentDidMount() {
+    this.props.getMsgList()
+    this.props.getRecvMsg()
+    console.log(this.props)
+  }
   render() {
     const user = this.props.user
     const navlist = [
