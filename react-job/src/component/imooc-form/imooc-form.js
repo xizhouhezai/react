@@ -13,7 +13,6 @@ export default function WrapperForm(Comp) {
       })
     }
     render() {
-      console.log(this.state)
       return(
         <Comp {...this.props} handleChange={this.handleChange} state={this.state}></Comp>
       )

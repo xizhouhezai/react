@@ -7,12 +7,9 @@ import NavLink from '../nav-link/nav-link'
 import Boss from '../../container/boss/boss'
 import Genius from '../../container/genius/genius'
 import Me from '../../container/me/me'
+import Msg from '../../container/msg/msg'
 
 import { getMsgList, getRecvMsg } from '../../redux/chat.redux'
-
-function Msg() {
-  return <h1>Msg</h1>
-}
 
 @connect(
   state=>state,
@@ -20,9 +17,10 @@ function Msg() {
 )
 class Dashboard extends Component {
   componentDidMount() {
-    this.props.getMsgList()
-    this.props.getRecvMsg()
-    console.log(this.props)
+    if (!this.props.chat.chatmsg.length) {
+      this.props.getMsgList()
+      this.props.getRecvMsg()
+    }
   }
   render() {
     const user = this.props.user
