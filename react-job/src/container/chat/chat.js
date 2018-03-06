@@ -27,6 +27,7 @@ class Chat extends Component{
     if (!this.props.chat.chatmsg.length) {
       this.props.getRecvMsg()
       this.props.getMsgList()
+      console.log(this.props)
     }
   }
   handleSubmit() {
@@ -112,7 +113,7 @@ class Chat extends Component{
                 <div>
                   <span style={{marginRight: 15, fontSize: 20}}
                     onClick={() => {this.setState({isShow: !this.state.isShow})}}
-                  >😃</span>
+                  >emoji</span>
                   <span onClick={this.handleSubmit}>发送</span>
                 </div>
               }

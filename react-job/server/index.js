@@ -16,7 +16,8 @@ io.on('connection', (socket) => {
     console.log(data)
     const { from, to, msg } = data
     const chatid = [from, to].sort().join('_')
-    chatModel.create({chatid, from, to, content: msg}, (err, doc) => {
+    const create_time = new Date().getTime()
+    chatModel.create({chatid, from, to, create_time,content: msg}, (err, doc) => {
       if (!err) {
         io.emit('rescMsg', Object.assign({}, doc._doc))
       }
