@@ -12,14 +12,9 @@ class Msg extends Component {
     let chatMsg = this.props.chat.chatmsg ? this.props.chat.chatmsg : []
     const to = chatMsg[chatMsg.length - 1] ? chatMsg[chatMsg.length - 1].to : null
     const from = chatMsg[chatMsg.length - 1] ? chatMsg[chatMsg.length - 1].from : null
-    console.log('to:' + to)
-    console.log('from: ' + from)
-    console.log('userid: ' + this.props.user._id)
-    console.log(chatMsg)
     if (to !== this.props.user._id && from !== this.props.user._id) {
       chatMsg.pop()
     }
-    console.log(chatMsg)
     chatMsg.forEach(v=>{
       msgGroup[v.chatid] = msgGroup[v.chatid] || []
       msgGroup[v.chatid].push(v)

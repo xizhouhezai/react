@@ -6,6 +6,8 @@ import { login } from '../../redux/user.redux'
 import Logo from '../../component/logo/logo'
 import WrapperForm from '../../component/imooc-form/imooc-form'
 
+import axios from 'axios'
+
 // 高阶组件的属性代理和反向继承
 /**
  * 什么是高阶组件
@@ -65,6 +67,11 @@ class Login extends React.Component{
 	// 		[key]:val
 	// 	})
 	// }
+	componentDidMount() {
+		axios.get('http://localhost:3000/data/read?type=it').then((res) => {
+			console.log(res)
+		})
+	}
 	handleLogin() {
 		this.props.login(this.props.state)
 	}
