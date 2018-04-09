@@ -1,6 +1,6 @@
 // 模拟redux
 export function createStore(reducer) {
-  let currentState = null //当前的state
+  let currentState; //当前的state
   let currentListener = []  //当前监听的reducer
 
   // 返回state, 可以获取state的唯一途径
@@ -16,7 +16,6 @@ export function createStore(reducer) {
   // 派发action，修改state
   function dispatch(action) {
     currentState = reducer(currentState, action)
-    console.log(currentState)
     currentListener.forEach(v => v())
     return action
   }
