@@ -2,6 +2,14 @@ import React,{ Component } from 'react'
 import PropTypes from 'prop-types'
 import { addgun, minusgun } from '../redux/reducer';
 
+function Button() {
+  return (
+    <div>
+      <button>按钮</button>
+    </div>
+  )
+}
+
 class Demo extends Component {
   static contextTypes = {
     store: PropTypes.object
@@ -29,6 +37,7 @@ class Demo extends Component {
         <button onClick={() => {
           store.dispatch(minusgun())
         }}>减少一把机枪</button>
+        <Button onClick={(v) => console.log(v)}></Button>
       </div>
     )
   }

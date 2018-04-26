@@ -53,6 +53,9 @@ class Dashboard extends Component {
       }
     ]
     const { pathname } = this.props.location
+    if (!navlist.find(v => v.path === pathname)) {
+      return null
+    }
     return(
       <div>
         <NavBar mode='dark' className='fixd-header'>
