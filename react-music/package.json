@@ -1,0 +1,24 @@
+{
+  "name": "react-music",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "big-integer": "^1.6.28",
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.4.0",
+    "koa2-cors": "^2.0.5",
+    "querystring": "^0.2.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts": "1.1.4",
+    "request": "^2.85.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "server": "supervisor ./server/server.js"
+  }
+}
