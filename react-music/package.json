@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.5.2",
+    "antd-mobile": "^2.1.8",
+    "axios": "^0.18.0",
     "big-integer": "^1.6.28",
     "koa": "^2.5.1",
     "koa-bodyparser": "^4.2.0",
@@ -11,6 +14,7 @@
     "querystring": "^0.2.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
     "request": "^2.85.0"
   },
@@ -20,5 +24,24 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "server": "supervisor ./server/server.js"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.7.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ],
+    "plugins": [
+      [
+        "import",
+        {
+          "libraryName": "antd-mobile",
+          "style": "css"
+        }
+      ],
+      "transform-decorators-legacy"
+    ]
   }
 }
