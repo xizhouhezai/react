@@ -10,4 +10,7 @@ router.get('/playlist/catlist', Playlist.playlist_catlist)
 // 歌单分类列表的详情
 router.get('/playlist', Playlist.playlist)
 
+// 歌单内的详情
+router.get('/playlist/detail', Playlist.detail)
+
 module.exports = router

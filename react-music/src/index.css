@@ -3,3 +3,6 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.am-card-header-content img {
+  width: 100%;
+}

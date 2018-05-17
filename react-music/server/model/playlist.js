@@ -39,5 +39,23 @@ module.exports = {
     )
     ctx.body = result.body
     next()
+  },
+  async detail(ctx, next) {
+    const cookie = ctx.cookies.get("Cookie") ? ctx.cookies.get("Cookie") : "";
+    const data = {
+      id: ctx.query.id,
+      n: 100000,
+      csrf_token: ""
+    }
+
+    const result = await createWebAPIRequest(
+      "music.163.com",
+      `/api/playlist/detail?id=${ctx.query.id}`,
+      "POST",
+      data,
+      cookie
+    )
+    ctx.body = result.body
+    next()
   }
 }
