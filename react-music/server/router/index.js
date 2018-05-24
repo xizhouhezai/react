@@ -1,6 +1,7 @@
 const Router = require('koa-router')
 
 const Playlist = require('../model/playlist')
+const Song = require('../model/song')
 
 const router = new Router()
 
@@ -12,5 +13,14 @@ router.get('/playlist', Playlist.playlist)
 
 // 歌单内的详情
 router.get('/playlist/detail', Playlist.detail)
+
+// 热门歌单分类
+router.get('/playlist/hot', Playlist.hot)
+
+// 获取音乐详情
+router.get('/song/detail', Song.detail)
+
+// 获取音乐 url
+router.get('/song/musicurl', Song.musicUrl)
 
 module.exports = router

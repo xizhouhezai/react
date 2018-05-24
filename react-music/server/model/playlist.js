@@ -40,6 +40,7 @@ module.exports = {
     ctx.body = result.body
     next()
   },
+  // 歌单内的详情
   async detail(ctx, next) {
     const cookie = ctx.cookies.get("Cookie") ? ctx.cookies.get("Cookie") : "";
     const data = {
@@ -52,6 +53,20 @@ module.exports = {
       "music.163.com",
       `/api/playlist/detail?id=${ctx.query.id}`,
       "POST",
+      data,
+      cookie
+    )
+    ctx.body = result.body
+    next()
+  },
+  // 热门歌单分类
+  async hot(ctx, next) {
+    const cookie = ctx.cookies.get('Cookie') ? ctx.cookies.get('Cookie') : ''
+    const data = {}
+    const result = await createWebAPIRequest(
+      'music.163.com',
+      '/weapi/playlist/hottags',
+      'POST',
       data,
       cookie
     )

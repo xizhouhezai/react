@@ -12,7 +12,7 @@ class Playlist extends React.Component {
       data: []
     }
   }
-  componentDidMount() {
+  componentWillMount() {
     axios.get('http://localhost:9000/playlist?limit=20').then(res => {
       if (res.status === 200) {
         this.setState({

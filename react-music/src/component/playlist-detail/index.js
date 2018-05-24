@@ -12,7 +12,7 @@ class PlaylistDetail extends React.Component {
       tracks: []
     }
   }
-  componentDidMount() {
+  componentWillMount() {
     const { match } = this.props
     axios.get('http://localhost:9000/playlist/detail', {
       params: {
