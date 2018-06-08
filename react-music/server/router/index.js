@@ -2,6 +2,7 @@ const Router = require('koa-router')
 
 const Playlist = require('../model/playlist')
 const Song = require('../model/song')
+const Artist = require('../model/artist')
 
 const router = new Router()
 
@@ -22,5 +23,7 @@ router.get('/song/detail', Song.detail)
 
 // 获取音乐 url
 router.get('/song/musicurl', Song.musicUrl)
+
+router.get('/artist/huaban', Artist.huaban)
 
 module.exports = router
