@@ -1,7 +1,7 @@
 import axios from 'axios'
 import * as types from './reducer-type'
 import io from 'socket.io-client'
-const socket = io('ws://localhost:8888')
+const socket = io('ws://www.xizhouhezai.com:3303')
 
 // reducer
 const initState = {
