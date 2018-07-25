@@ -34,3 +34,9 @@
 	bottom: 0;
 	width: 100%;
 }
+.am-grid-icon {
+	display: inline-block;
+}
+.am-grid-text {
+	font-size: 12px !important;
+}
