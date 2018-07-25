@@ -115,5 +115,5 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy": "www.xizhouhezai.com:3303"
+  "proxy": "http://www.xizhouhezai.com:3303"
 }
