@@ -14,16 +14,19 @@ class AuthRoute extends React.Component{
 	componentDidMount() {
 		const publicList = ['/login', '/register']
 		const pathname = this.props.location.pathname
+		console.log(this.props.location.pathname)
 		if (publicList.indexOf(pathname) > -1) {
 			return null
 		}
 		// 获取用户信息
 		axios.get('/user/info')
 			.then(res=>{
+				console.log(res)
 				if (res.status === 200) {
 					if (res.data.code === 0) {
 						// 有登录信息de
 						this.props.loadData(res.data.data)
+						this.props.history.push('/msg')
 					}else{
 						this.props.history.push('/login')
 					}
