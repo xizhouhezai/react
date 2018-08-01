@@ -63,7 +63,7 @@ class Dashboard extends Component {
             pathname !== '/' ? navlist.find(v=>v.path===pathname).title : ''
           }
         </NavBar>
-        <div style={{marginTop:45}}>
+        <div style={{marginTop:45, marginBottom: 60}}>
           <Switch>
             <Route path="/boss" component={ Boss }/>
             <Route path="/genius" component={ Genius }/>

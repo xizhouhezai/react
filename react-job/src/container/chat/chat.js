@@ -24,10 +24,10 @@ class Chat extends Component{
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   componentDidMount() {
+    console.log(this.props)
     if (!this.props.chat.chatmsg.length) {
       this.props.getRecvMsg()
       this.props.getMsgList()
-      console.log(this.props)
     }
   }
   handleSubmit() {
@@ -43,6 +43,7 @@ class Chat extends Component{
     }
     const chatid = getChatId(this.props.user._id, userid)
     const chatmsgs = this.props.chat.chatmsg.filter(v => v.chatid === chatid)
+    console.log(chatmsgs)
     return (
       <div className="chat">
         <NavBar
